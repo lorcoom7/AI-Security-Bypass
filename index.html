@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Immersive Learning Lab</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <p class="eyebrow">Prototype • Interactive Learning Platform</p>
+      <h1>Immersive Learning Lab</h1>
+      <p class="subtitle">
+        Explore Math, Science, and History through cinematic 3D motion and
+        visual simulation.
+      </p>
+    </header>
+
+    <main>
+      <section class="tabs-shell" aria-label="Learning categories">
+        <div class="tabs" role="tablist" aria-label="Category tabs">
+          <button class="tab is-active" role="tab" aria-selected="true" data-tab="science">
+            Science
+          </button>
+          <button class="tab" role="tab" aria-selected="false" data-tab="math">Math</button>
+          <button class="tab" role="tab" aria-selected="false" data-tab="history">
+            History
+          </button>
+        </div>
+
+        <article class="panel is-active" id="science" role="tabpanel">
+          <div class="panel-header">
+            <h2>Science • 3D Digestion Journey</h2>
+            <p>
+              Scroll to move food from mouth to elimination while the animation
+              evolves in real-time.
+            </p>
+          </div>
+
+          <div class="simulator-wrap">
+            <div class="simulator-stage">
+              <canvas id="digestCanvas" width="960" height="540" aria-label="Food digestion simulation"></canvas>
+              <div class="progress-pill">Progress: <span id="progressPct">0%</span></div>
+            </div>
+
+            <div class="scroll-story" id="digestStory">
+              <section class="story-step" data-stage="0.08">
+                <h3>1) Mouth</h3>
+                <p>
+                  Chewing and saliva break food into smaller pieces, beginning
+                  digestion.
+                </p>
+              </section>
+              <section class="story-step" data-stage="0.24">
+                <h3>2) Esophagus</h3>
+                <p>
+                  Wave-like contractions (peristalsis) push food down to the
+                  stomach.
+                </p>
+              </section>
+              <section class="story-step" data-stage="0.42">
+                <h3>3) Stomach</h3>
+                <p>
+                  Acid and enzymes churn food into a semi-liquid mixture called
+                  chyme.
+                </p>
+              </section>
+              <section class="story-step" data-stage="0.62">
+                <h3>4) Small Intestine</h3>
+                <p>
+                  Nutrients are absorbed into the bloodstream through millions
+                  of villi.
+                </p>
+              </section>
+              <section class="story-step" data-stage="0.8">
+                <h3>5) Large Intestine</h3>
+                <p>
+                  Water and minerals are absorbed while the remaining material
+                  compacts.
+                </p>
+              </section>
+              <section class="story-step" data-stage="1">
+                <h3>6) End of Journey</h3>
+                <p>
+                  Waste exits the body. You have completed the digestive system
+                  pathway.
+                </p>
+              </section>
+            </div>
+          </div>
+        </article>
+
+        <article class="panel" id="math" role="tabpanel" hidden>
+          <div class="panel-header">
+            <h2>Math • Future 3D Modules</h2>
+            <p>
+              Planned: interactive calculus surfaces, rotating geometry proofs,
+              and equation particle systems.
+            </p>
+          </div>
+          <div class="placeholder-grid">
+            <div class="placeholder-card">Vector Field Explorer</div>
+            <div class="placeholder-card">3D Geometry Playground</div>
+            <div class="placeholder-card">Probability Sim Lab</div>
+          </div>
+        </article>
+
+        <article class="panel" id="history" role="tabpanel" hidden>
+          <div class="panel-header">
+            <h2>History • Future 3D Timelines</h2>
+            <p>
+              Planned: scroll-driven civilizations timeline, battle strategy
+              maps, and cultural artifact visualizations.
+            </p>
+          </div>
+          <div class="placeholder-grid">
+            <div class="placeholder-card">Ancient Civilizations Map</div>
+            <div class="placeholder-card">Industrial Revolution Timeline</div>
+            <div class="placeholder-card">World Events Immersive Atlas</div>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
